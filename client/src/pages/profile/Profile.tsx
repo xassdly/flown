@@ -14,8 +14,13 @@ import ProfilePost from './ProfilePost';
 import { posts_array } from '../../mock/posts';
 import Modal from '../../components/Modal/Modal';
 import Post from '../../components/Post/Post';
+import type { SwipeableHandlers } from 'react-swipeable';
 
-const Profile = () => {
+type ProfileProps = {
+    handlers: SwipeableHandlers;
+}
+
+const Profile = ( {handlers}: ProfileProps ) => {
     const { id } = useParams();
     const { user: currentUser } = useUser();
     const userId = Number(id);
@@ -44,7 +49,7 @@ const Profile = () => {
     }
 
     return (
-        <div className={styles.profile}>
+        <div {...handlers} className={styles.profile}>
             <header className={styles.header}>
                 <h3>{user.username.toUpperCase()}</h3>
             </header>

@@ -23,7 +23,7 @@ function App() {
   const [isRightOpen, setIsRightOpen] = useState(false);
   const [isLeftOpen, setIsLeftOpen] = useState(false);
 
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -59,7 +59,7 @@ function App() {
         <Route path='/profile/:id' element={
           <div className='main'>
             <Navbar isOpen={isLeftOpen} onClose={() => setIsLeftOpen(false)} handleLogout={handleLogout}/>
-            <Profile />
+            <Profile handlers={handlers} />
           </div>
         }/>
         <Route path='/settings' element={
