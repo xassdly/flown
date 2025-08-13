@@ -23,3 +23,9 @@ dist-ssr
 *.sln
 *.sw?
 TASKS.txt
+# client build & deps
+/client/dist
+/client/node_modules
+
+# firebase debug
+firebase-debug.log
